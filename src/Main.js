@@ -9,7 +9,7 @@ class Main extends Component {
                         <img className="author-image" src="./images/logo.png" />
                         <div className="author-details">
                             <h4>Open Court</h4>
-                            <span>9 hrs : <img src="./images/earth-icon.png" /></span>
+                            <span>9 hrs &middot; <img src="./images/earth-icon.png" /></span>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ class Main extends Component {
                     <div className="write-a-comment">
                         <img src="./images/lebron.png" />
                         <form>
-                            <input placeholder="Write a comment ..." />
+                            <input type="text" placeholder="Write a comment ..." />
                         </form>
                     </div>
                     <div className="filter-comments">
@@ -64,7 +64,7 @@ class Main extends Component {
                             <img src="./images/harden.png" />
                             <div className="comment-wrapper">
                                 <p className="comment"><span className="username">Rami Bn'Aly</span>looooooooooool jabari parker is better than all heat player!!!</p>
-                                <span className="comment-action">Like : <span>9h</span></span>
+                                <span className="comment-action">Like<span> &middot; 9h</span></span>
                             </div>
                             <span className="number-of-likes">
                                 <img src="./images/like-icon.png" />
