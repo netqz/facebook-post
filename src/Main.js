@@ -1,28 +1,57 @@
 import React, { Component } from "react"
 
 class Main extends Component {
+    constructor () {
+        super ()
+        this.state = {
+            postAuthor: 'Open Court',
+            authorImage: './images/logo.png',
+            createdBefore: '9',
+            postContent: 'The Milwaukee Bucks are interested in acquiring Hassan Whiteside. It would likely take a deal involving Jabari Parker and Eric Bledsoe to work though.',
+            unknown: 'DPeters',
+            postImage: './images/profile-picture.jpg',
+            likeCount: '16',
+            commentsCount: '20',
+            submittedComments: [
+                {
+                    username: 'Rami Bn\'Aly',
+                    image: './images/harden.png',
+                    content: 'looooooooooool jabari parker is better than all heat player!!!',
+                    createdBefore: '9',
+                    likeCount: '45'
+                },
+                {
+                    username: 'Matt Alkhazali',
+                    image: './images/westbrook.png',
+                    content: 'If Miami pull this off, and acquire DeAndre Jordan. Then we would know where LeBron will go next year with Wade.',
+                    createdBefore: '9',
+                    likeCount: ''
+                }
+            ]
+        }
+    }
     render () {
         return (
             <div className="facebook-post">
                 <div className="post-header">
                     <div className="post-author">
-                        <img className="author-image" src="./images/logo.png" />
+                        <img className="author-image" src={ this.state.authorImage } />
                         <div className="author-details">
-                            <h4>Open Court</h4>
-                            <span>9 hrs &middot; <img src="./images/earth-icon.png" /></span>
+                            <h4>{ this.state.postAuthor }</h4>
+                            <span>{ this.state.createdBefore } hrs &middot; <img src="./images/earth-icon.png" /></span>
                         </div>
                     </div>
                 </div>
                 <div className="post-content">
-                    <p>The Milwaukee Bucks are interested in acquiring Hassan Whiteside. It would likely take a deal involving Jabari Parker and Eric Bledsoe to work though.</p>
-                    <span>DPeters</span>
-                    <img src="./images/profile-picture.jpg" />
+                    <p>{ this.state.postContent }</p>
+                    <span>{ this.state.unknown }</span>
+                    <img src={ this.state.postImage } />
                     <div className="post-statistics">
                         <div className="like-statistics">
                             <img src="./images/like-icon.png" />
-                            <span>16</span>
+                            <span>{ this.state.likeCount }</span>
                         </div>
-                        <span>20 Comments</span>
+                        <span>{ this.state.commentsCount } Comments</span>
                     </div>
                 </div>
                 <div className="action-toolbar">
@@ -41,7 +70,9 @@ class Main extends Component {
                 </div>
                 <div className="comments-section">
                     <div className="write-a-comment">
-                        <img src="./images/lebron.png" />
+                        <span>
+                            <img src="./images/lebron.png" />
+                        </span>
                         <form>
                             <input type="text" placeholder="Write a comment ..." />
                         </form>
@@ -59,18 +90,24 @@ class Main extends Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="submited-commments">
-                        <div className="user-comment">
-                            <img src="./images/harden.png" />
-                            <div className="comment-wrapper">
-                                <p className="comment"><span className="username">Rami Bn'Aly</span>looooooooooool jabari parker is better than all heat player!!!</p>
-                                <span className="comment-action">Like<span> &middot; 9h</span></span>
+                    <div className="submitted-commments">
+                        { this.state.submittedComments.map((submittedComment, i) => {
+                            return  <div key={ submittedComment.username } className="user-comment">
+                                <span>
+                                    <img src={ submittedComment.image } />
+                                </span>
+                                <div className="comment-wrapper">
+                                    <p className="comment"><span className="username">{ submittedComment.username }</span>{ submittedComment.content }</p>
+                                    <span className="comment-action">Like<span> &middot; { submittedComment.createdBefore }h</span></span>
+                                </div>
+                                {submittedComment.likeCount &&
+                                    <span className="number-of-likes">
+                                        <img src="./images/like-icon.png" />
+                                        <span>{ submittedComment.likeCount }</span>
+                                    </span>
+                                }
                             </div>
-                            <span className="number-of-likes">
-                                <img src="./images/like-icon.png" />
-                                <span>45</span>
-                            </span>
-                        </div>
+                        })}
                     </div>
                 </div>
             </div>
