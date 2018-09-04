@@ -1,0 +1,235 @@
+.facebook-post
+{
+    margin: 3rem auto;
+
+    width: 30rem;
+
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+
+    & > .post-header
+    {
+        padding: 1rem 1rem 0 1rem;
+
+        & > .post-author
+        {
+            display: flex;
+
+            & > .author-image
+            {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            & > .author-details
+            {
+                padding: 0 0 0 .5rem;
+
+                & > *
+                {
+                    height: 1.5rem;
+                    line-height: 1.5rem;
+                }
+
+                & > span
+                {
+                    display: block;
+                }
+
+                & > h4
+                {
+                    margin: 0;
+
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+
+    & > .post-content
+    {
+        padding: 1rem 1rem 0 1rem;
+
+        & > p,
+        & > span
+        {
+            margin: 0 0 .5rem 0;
+        }
+
+        & > span
+        {
+            display: block;
+
+            color: $color-blue;
+        }
+
+        & > img
+        {
+            width: 100%;
+        }
+
+        & > .post-statistics
+        {
+            display: flex;
+            justify-content: space-between;
+
+            padding: .25rem 0;
+        }
+    }
+
+    & > .action-toolbar
+    {
+        display: flex;
+        text-align: center;
+
+        padding: 0.5rem 0;
+
+        border-top: 1px solid $color-light-gray;
+        border-bottom: 1px solid $color-light-gray;
+
+        & > *
+        {
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+
+            width: 33.33%;
+
+            & > img
+            {
+                width: 18px;
+                height: 18px;
+
+                margin: 0 .5rem 0 0;
+            }
+
+            & > span
+            {
+                padding: 3px 0 0 0;
+            }
+        }
+    }
+
+    & > .comments-section
+    {
+        padding: 1rem;
+
+        background-color: $color-light-gray;
+
+        & > .write-a-comment
+        {
+            display: flex;
+
+            & > img
+            {
+                height: 2rem;
+                width: 2rem;
+
+                border-radius: 100%;
+            }
+
+            & > form
+            {
+                width: 100%;
+
+                & > input
+                {
+                    margin: 0 0 0 .5rem;
+                    padding: 0 .5rem;
+
+                    width: 100%;
+
+                    height: 2rem;
+                    line-height: 2rem;
+
+                    border: 1px solid $color-dark-gray;
+                    border-radius: 1rem;
+                }
+            }
+        }
+
+        & > .filter-comments
+        {
+            margin: 1rem 0;
+
+            & > ul
+            {
+                display: none;
+            }
+        }
+
+        & > .submited-commments
+        {
+            & > .user-comment
+            {
+                display: flex;
+                position: relative;
+
+                & > img
+                {
+                    width: 2rem;
+                    height: 2rem;
+
+                    border-radius: 100%;
+                }
+
+                & > .comment-wrapper
+                {
+                    margin: 0 0 0 .5rem;
+
+                    & > .comment
+                    {
+                        margin: 0;
+                        padding:.5rem;
+
+                        border: 1px solid $color-dark-gray;
+                        border-radius: 1rem;
+
+                        background-color: $color-white;
+
+                        & > .username
+                        {
+                            margin: 0 .25rem 0 0;
+                            font-weight: bold;
+                            color: $color-blue;
+                        }
+                    }
+
+                    & > .comment-action
+                    {
+                        display: block;
+                        margin: .25rem 0 0 .5rem;
+                    }
+                }
+
+                & > .number-of-likes
+                {
+                    display: flex;
+                    position: absolute;
+                    right: 0; bottom: 0;
+
+                    padding: .25rem;
+
+                    background-color: $color-white;
+                    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+
+                    border-radius: 1rem;
+
+                    & > img
+                    {
+                        margin: 0 .5rem 0 0;
+
+                        height: 18px;
+                        width: 18px;
+                    }
+
+                    & > span
+                    {
+                        padding: 3px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
